@@ -24,9 +24,19 @@ class DBConnection
             $statement = $pdo->prepare($query);
             $success = $statement->execute();
             if($type == "select")
-            return $statement->fetchAll();
+            {
+                $output = $statement->fetchAll();
+                $pdo =null; 
+                return $output;
+                
+            }
+            
             else
-            return $success;    
+            {
+                $pdo =null; 
+                return $success;
+            }
+                
         }
         catch(Exception $e)
         {
