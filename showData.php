@@ -1,3 +1,8 @@
+<?php
+  session_start();
+	if($_SESSION['username']!=true)
+	header('Location: login.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +14,12 @@
 
 </head>
 <body>
+<nav>
+		<ul>
+			<li><a href="form.php">Add Students</a></li>
+			<li><a href="logout.php">Logout</a></li>
+		</ul>
+	</nav>
 <h1> Registered Students are </h1>
 <div>
 <table class="table">
