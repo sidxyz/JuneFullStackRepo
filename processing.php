@@ -11,6 +11,6 @@ VALUES (NULL,'".$name."','".$email."','".$contact."')","insert");
 
 //var_dump($executed);
 if($executed==true)
-header('Location: showData.php');
+echo "success";
 else
-echo "error while entering data";
+echo "failure";
